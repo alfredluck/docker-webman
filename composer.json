@@ -1,0 +1,15 @@
+{
+  "name": "webman-tech/docker",
+  "type": "library",
+  "license": "MIT",
+  "description": "docker for webman app",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Kriss\\WebmanDocker\\": "src"
+    }
+  },
+  "config": {
+    "github-actions-date": "2024-06-01T00:52:55.208Z"
+  }
+}
