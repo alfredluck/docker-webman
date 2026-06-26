@@ -16,7 +16,6 @@ FROM php:$PHP_CLI_VERSION
 # 系统依赖安装
 COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-RUN apk add --no-cache supervisor unzip
 
 # PHP 扩展安装
 # https://github.com/mlocati/docker-php-extension-installer#supported-php-extensions
@@ -36,12 +35,10 @@ RUN install-php-extensions \
 # php
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 COPY config/php.ini "$PHP_INI_DIR/conf.d/app.ini"
-# supervisor
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # 设置项目目录
 RUN mkdir -p /app
 WORKDIR /app
 
 # 启动脚本
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["php", "start.php", "start"]
