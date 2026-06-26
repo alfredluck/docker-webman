@@ -32,11 +32,9 @@ RUN install-php-extensions \
     zip
 
 # 设置配置文件
-# php
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 COPY config/php.ini "$PHP_INI_DIR/conf.d/app.ini"
 
 # 设置项目目录
 RUN mkdir -p /www
 WORKDIR /www
-
