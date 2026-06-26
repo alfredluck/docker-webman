@@ -37,8 +37,6 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 COPY config/php.ini "$PHP_INI_DIR/conf.d/app.ini"
 
 # 设置项目目录
-RUN mkdir -p /app
-WORKDIR /app
+RUN mkdir -p /www
+WORKDIR /www
 
-# 启动脚本
-CMD ["php", "start.php", "start"]
