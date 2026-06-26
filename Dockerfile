@@ -29,7 +29,8 @@ RUN install-php-extensions \
     pcntl \
     redis \
     sockets \
-    zip
+    zip \
+    xlswriter
 
 # 设置配置文件
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
