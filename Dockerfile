@@ -1,4 +1,4 @@
-# https://hub.docker.com/_/php
+# https://hub.docker.com/_/php/tags
 ARG PHP_CLI_VERSION=8.2-cli-alpine
 # https://hub.docker.com/r/mlocati/php-extension-installer
 ARG PHP_EXTENSION_INSTALL_VERSION=latest
